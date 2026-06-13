@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyPI Explorer | Discover Python Packages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header with glass morphism -->
+        <header class="glass-header">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fab fa-python"></i>
+                    <div class="logo-glow"></div>
+                </div>
+                <div class="logo-text">
+                    <h1>PyPI<span>Explorer</span></h1>
+                    <p>Discover, Explore, Innovate</p>
+                </div>
+            </div>
+            <div class="header-stats">
+                <div class="stat-badge">
+                    <i class="fas fa-database"></i>
+                    <span>500k+ Packages</span>
+                </div>
+                <div class="stat-badge">
+                    <i class="fas fa-download"></i>
+                    <span>Billions of Downloads</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">
+                    Search Python Packages
+                    <span class="hero-accent">Effortlessly</span>
+                </h2>
+                <p class="hero-subtitle">
+                    Explore the comprehensive PyPI ecosystem with our modern, lightning-fast package explorer
+                </p>
+            </div>
+        </div>
+
+        <!-- Enhanced Search Section -->
+        <div class="search-section">
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <div class="search-icon-wrapper">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input"
+                        placeholder="Search for Python packages..." 
+                        autocomplete="off"
+                    >
+                    <button class="search-clear" id="clearSearch" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="search-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+                <div id="searchResults" class="search-results glass-panel"></div>
+            </div>
+            
+            <!-- Quick filters -->
+            <div class="quick-filters">
+                <span class="filter-label">Popular:</span>
+                <button class="filter-chip" data-package="requests">requests</button>
+                <button class="filter-chip" data-package="numpy">numpy</button>
+                <button class="filter-chip" data-package="fastapi">fastapi</button>
+                <button class="filter-chip" data-package="django">django</button>
+                <button class="filter-chip" data-package="pandas">pandas</button>
+                <button class="filter-chip" data-package="flask">flask</button>
+            </div>
+        </div>
+
+        <!-- Package Details Section with enhanced loading -->
+        <div id="packageDetails" class="package-details glass-panel">
+            <div class="empty-state">
+                <div class="empty-state-icon">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <h3>No Package Selected</h3>
+                <p>Search for a Python package to view detailed information</p>
+                <div class="empty-state-suggestions">
+                    <span>Try searching for:</span>
+                    <div class="suggestion-chips">
+                        <button class="suggestion-chip" data-package="requests">requests</button>
+                        <button class="suggestion-chip" data-package="pytest">pytest</button>
+                        <button class="suggestion-chip" data-package="click">click</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <i class="fas fa-code"></i>
+                <span>PyPI Explorer v2.0</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://pypi.org" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> PyPI Official
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
